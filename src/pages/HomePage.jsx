@@ -27,8 +27,6 @@ export default function HomePage() {
               loading="eager"
             />
 
-            <p className="hero__label" aria-hidden="true">Cloud Kitchen Bakery · Surprise, AZ</p>
-
             <h1 id="hero-heading" className="hero__title">
               Sinfully Indulgent.<br />Artfully Crafted.
             </h1>
@@ -71,6 +69,15 @@ export default function HomePage() {
             <span>Scroll</span>
             <div className="hero__scroll-arrow" />
           </div>
+
+          {/* Ambient orb — extra bottom glow */}
+          <div aria-hidden="true" style={{
+            position: 'absolute', bottom: '-20%', left: '50%',
+            transform: 'translateX(-50%)',
+            width: '500px', height: '300px',
+            background: 'radial-gradient(ellipse, rgba(139,0,0,0.07) 0%, transparent 70%)',
+            pointerEvents: 'none',
+          }} />
         </section>
 
         {/* ── MENU ──────────────────────────────────────────────────── */}
