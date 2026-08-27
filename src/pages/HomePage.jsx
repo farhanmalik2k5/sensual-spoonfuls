@@ -122,18 +122,26 @@ export default function HomePage() {
               <h2 id="contact-heading" className="section-heading">
                 Find Us
               </h2>
+              <p className="contact-section__subtitle">
+                Available for orders &amp; inquiries — reach out anytime
+              </p>
               <div className="gold-divider" role="separator" />
             </div>
 
             <div className="contact-section__grid">
-              {/* Address */}
-              <div className="contact-item contact-item--full">
-                <div className="contact-item__icon" aria-hidden="true">📍</div>
+
+              {/* Address — hero card spans full width */}
+              <div className="contact-item contact-item--full contact-item--address">
+                <div className="contact-item__icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                  </svg>
+                </div>
                 <div className="contact-item__content">
-                  <span className="contact-item__label">Address</span>
+                  <span className="contact-item__label">Our Location</span>
                   <address className="contact-item__value" style={{ fontStyle: 'normal' }}>
-                    13794 W Waddell Rd #239<br />
-                    Surprise, AZ 85379
+                    13794 W Waddell Rd #239 &nbsp;·&nbsp; Surprise, AZ 85379
                   </address>
                 </div>
               </div>
@@ -145,11 +153,16 @@ export default function HomePage() {
                 id="contact-phone-link"
                 aria-label="Call Sensual Spoonfuls at 623-806-0565"
               >
-                <div className="contact-item__icon" aria-hidden="true">📞</div>
+                <div className="contact-item__icon-wrap" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.03 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </div>
                 <div className="contact-item__content">
-                  <span className="contact-item__label">Phone</span>
+                  <span className="contact-item__label">Call Us</span>
                   <span className="contact-item__value">623-806-0565</span>
                 </div>
+                <span className="contact-item__arrow">↗</span>
               </a>
 
               {/* Email */}
@@ -159,11 +172,17 @@ export default function HomePage() {
                 id="contact-email-link"
                 aria-label="Email Sensual Spoonfuls"
               >
-                <div className="contact-item__icon" aria-hidden="true">✉️</div>
+                <div className="contact-item__icon-wrap" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
                 <div className="contact-item__content">
-                  <span className="contact-item__label">Email</span>
+                  <span className="contact-item__label">Email Us</span>
                   <span className="contact-item__value">sensualspoonfuls@gmail.com</span>
                 </div>
+                <span className="contact-item__arrow">↗</span>
               </a>
 
               {/* Facebook */}
@@ -175,11 +194,16 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 aria-label="Visit Sensual Spoonfuls on Facebook (opens in new tab)"
               >
-                <div className="contact-item__icon" aria-hidden="true">📘</div>
+                <div className="contact-item__icon-wrap" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                  </svg>
+                </div>
                 <div className="contact-item__content">
                   <span className="contact-item__label">Facebook</span>
-                  <span className="contact-item__value">Follow Us on Facebook ↗</span>
+                  <span className="contact-item__value">Follow Us on Facebook</span>
                 </div>
+                <span className="contact-item__arrow">↗</span>
               </a>
 
               {/* Website */}
@@ -191,11 +215,18 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 aria-label="Visit the Sensual Spoonfuls website (opens in new tab)"
               >
-                <div className="contact-item__icon" aria-hidden="true">🌐</div>
+                <div className="contact-item__icon-wrap" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                  </svg>
+                </div>
                 <div className="contact-item__content">
                   <span className="contact-item__label">Website</span>
                   <span className="contact-item__value">sensualspoonfuls.com</span>
                 </div>
+                <span className="contact-item__arrow">↗</span>
               </a>
             </div>
           </div>
