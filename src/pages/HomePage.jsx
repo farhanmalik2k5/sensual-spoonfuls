@@ -130,19 +130,51 @@ export default function HomePage() {
 
             <div className="contact-section__grid">
 
-              {/* Address — hero card spans full width */}
-              <div className="contact-item contact-item--full contact-item--address">
-                <div className="contact-item__icon-wrap" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                    <circle cx="12" cy="9" r="2.5"/>
-                  </svg>
+              {/* Address — Branded Map Widget */}
+              <div className="map-widget contact-item--full">
+
+                {/* Branded header */}
+                <div className="map-widget__header">
+                  <div className="map-widget__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                      <circle cx="12" cy="9" r="2.5"/>
+                    </svg>
+                  </div>
+                  <div className="map-widget__info">
+                    <span className="map-widget__label">Our Location</span>
+                    <address className="map-widget__address" style={{ fontStyle: 'normal' }}>
+                      13794 W Waddell Rd #239 &nbsp;·&nbsp; Surprise, AZ 85379
+                    </address>
+                  </div>
+                  <a
+                    href="https://maps.google.com/?q=13794+W+Waddell+Rd+%23239,+Surprise,+AZ+85379"
+                    className="map-widget__directions"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Get directions to Sensual Spoonfuls"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                    </svg>
+                    Directions
+                  </a>
                 </div>
-                <div className="contact-item__content">
-                  <span className="contact-item__label">Our Location</span>
-                  <address className="contact-item__value" style={{ fontStyle: 'normal' }}>
-                    13794 W Waddell Rd #239 &nbsp;·&nbsp; Surprise, AZ 85379
-                  </address>
+
+                {/* Map embed */}
+                <div className="map-widget__frame">
+                  <iframe
+                    title="Sensual Spoonfuls location map"
+                    src="https://maps.google.com/maps?q=13794+W+Waddell+Rd+%23239,+Surprise,+AZ+85379&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                  {/* Dark overlay tint to match brand */}
+                  <div className="map-widget__overlay" aria-hidden="true" />
                 </div>
               </div>
 
