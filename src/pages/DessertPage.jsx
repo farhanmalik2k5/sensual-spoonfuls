@@ -1,17 +1,15 @@
-import { useParams, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import { getDessertBySlug } from '../data/desserts';
-import Footer from '../components/Footer';
 
 export default function DessertPage() {
   const { slug } = useParams();
   const dessert = getDessertBySlug(slug);
-  const [variant, setVariant] = useState('alcohol'); // 'alcohol' or 'af'
 
   // Dynamically update document title and meta description for SEO
   useEffect(() => {
     if (dessert) {
-      document.title = `${dessert.name} Nutritional Value | Sensual Spoonfuls`;
+      document.title = `${dessert.name} Nutritional Information | Sensual Spoonfuls`;
 
       // Meta description
       let meta = document.querySelector('meta[name="description"]');
@@ -53,141 +51,87 @@ export default function DessertPage() {
             height="70"
           />
           <div className="not-found__code" aria-hidden="true">404</div>
-          <h1 className="not-found__title">Dessert Not Found</h1>
+          <h1 className="not-found__title">Information Not Found</h1>
           <p className="not-found__body">
-            We couldn&apos;t find a dessert called &ldquo;{slug}&rdquo;.
-            It may have been renamed or this QR code is outdated.
-            Head back to the menu to see our current creations.
+            We couldn&apos;t find nutritional information for &ldquo;{slug}&rdquo;.
+            Please check the QR code or URL.
           </p>
-          <Link to="/#menu" className="btn-primary" id="back-to-menu-btn-notfound">
-            ← Back to Menu
-          </Link>
         </div>
       </div>
     );
   }
 
-  const activeImage = variant === 'alcohol' ? dessert.infoImage : (dessert.infoImageAF || dessert.infoImage);
-  const activeAlt = variant === 'alcohol' ? dessert.infoImageAlt : (dessert.infoImageAltAF || dessert.infoImageAlt);
-
-  /* ── Dessert Found ─────────────────────────────────────── */
+  /* ── Standalone Dead-End QR Nutrition Page ──────────────── */
   return (
-    <>
-      <main className="dessert-page page-enter" role="main" aria-labelledby="dessert-name">
-        {/* Top bar: Back navigation */}
-        <div className="dessert-page__topbar">
-          <div className="container">
-            <Link
-              to="/#menu"
-              className="dessert-page__back"
-              id="back-to-menu-btn"
-              aria-label="Back to full menu"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M10 12L6 8l4-4"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              View All Desserts
-            </Link>
-          </div>
+    <div className="qr-nutrition-page page-enter" role="main" aria-labelledby="dessert-name">
+      <div className="container qr-nutrition-container">
+        
+        {/* Brand Header */}
+        <header className="qr-nutrition__header">
+          <img
+            src="/assets/logo-icon.png"
+            alt="Sensual Spoonfuls"
+            className="qr-nutrition__logo"
+            width="90"
+            height="90"
+            loading="eager"
+          />
+          <span className="qr-nutrition__brand-name">Sensual Spoonfuls</span>
+          <p className="qr-nutrition__label">Nutritional &amp; Ingredient Information</p>
+          <h1 id="dessert-name" className="qr-nutrition__title">
+            {dessert.name}
+          </h1>
+          <p className="qr-nutrition__tagline">{dessert.tagline}</p>
+          <div className="gold-divider" role="separator" />
+        </header>
+
+        {/* Primary Content: Nutritional Image */}
+        <div className="qr-nutrition__image-wrap">
+          <img
+            src={dessert.infoImage}
+            alt={dessert.infoImageAlt}
+            className="qr-nutrition__image"
+            loading="eager"
+            fetchpriority="high"
+          />
         </div>
 
-        {/* Dessert Hero */}
-        <section className="dessert-page__hero">
-          <div className="container">
-            {/* Brand logo */}
-            <div className="dessert-page__brand">
-              <img
-                src="/assets/logo-icon.png"
-                alt="Sensual Spoonfuls"
-                className="dessert-page__brand-logo"
-                width="80"
-                height="80"
-                loading="eager"
-              />
+        {/* Company Information Card */}
+        <div className="qr-nutrition__company-card">
+          <h2 className="qr-nutrition__company-heading">Company Information</h2>
+          <div className="qr-nutrition__company-grid">
+            <div className="qr-nutrition__company-item">
+              <span className="qr-nutrition__company-label">Brand</span>
+              <span className="qr-nutrition__company-value">Sensual Spoonfuls</span>
             </div>
-
-            <p className="dessert-page__label">Sensual Spoonfuls Nutritional Information</p>
-
-            <h1 id="dessert-name" className="dessert-page__name">
-              {dessert.name}
-            </h1>
-
-            <p className="dessert-page__tagline">{dessert.tagline}</p>
-          </div>
-        </section>
-
-        {/* Variant Selector Tabs for Alcohol vs Alcohol-Free */}
-        <section className="dessert-page__variant-selector">
-          <div className="container">
-            <div className="variant-tabs" role="tablist" aria-label="Nutritional value version options">
-              <button
-                type="button"
-                role="tab"
-                aria-selected={variant === 'alcohol'}
-                className={`variant-tab ${variant === 'alcohol' ? 'variant-tab--active' : ''}`}
-                onClick={() => setVariant('alcohol')}
-              >
-                🍷 Alcohol Version
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={variant === 'af'}
-                className={`variant-tab ${variant === 'af' ? 'variant-tab--active' : ''}`}
-                onClick={() => setVariant('af')}
-              >
-                🌱 Alcohol-Free (Non-Alcoholic)
-              </button>
+            <div className="qr-nutrition__company-item">
+              <span className="qr-nutrition__company-label">Address</span>
+              <span className="qr-nutrition__company-value">
+                13794 W Waddell Rd #239<br />Surprise, AZ 85379
+              </span>
+            </div>
+            <div className="qr-nutrition__company-item">
+              <span className="qr-nutrition__company-label">Phone</span>
+              <span className="qr-nutrition__company-value">623-806-0565</span>
+            </div>
+            <div className="qr-nutrition__company-item">
+              <span className="qr-nutrition__company-label">Email</span>
+              <span className="qr-nutrition__company-value">sensualspoonfuls@gmail.com</span>
+            </div>
+            <div className="qr-nutrition__company-item">
+              <span className="qr-nutrition__company-label">Website</span>
+              <span className="qr-nutrition__company-value">sensualspoonfuls.com</span>
             </div>
           </div>
-        </section>
-
-        {/* Nutrition / Ingredient Information Image */}
-        <section
-          className="dessert-page__info"
-          aria-label="Nutrition and ingredient information"
-        >
-          <div className="container">
-            <div className="dessert-page__info-image-wrap">
-              <img
-                key={variant}
-                src={activeImage}
-                alt={activeAlt}
-                className="dessert-page__info-image"
-                loading="eager"
-                fetchpriority="high"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Bottom Actions */}
-        <div className="dessert-page__actions">
-          <div className="container">
-            <Link
-              to="/#menu"
-              className="btn-ghost"
-              id="back-to-menu-bottom-btn"
-            >
-              ← Back to Full Menu
-            </Link>
-          </div>
+          <p className="qr-nutrition__legal">
+            Sensual Spoonfuls dessert cups contain approximately 5% ABV. Please enjoy responsibly. Must be 21+ to consume alcoholic variants.
+          </p>
+          <p className="qr-nutrition__copyright">
+            &copy; {new Date().getFullYear()} Sensual Spoonfuls. All rights reserved.
+          </p>
         </div>
-      </main>
 
-      <Footer />
-    </>
+      </div>
+    </div>
   );
 }

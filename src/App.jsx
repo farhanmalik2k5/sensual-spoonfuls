@@ -47,18 +47,18 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: 'nutrition/:slug',
-        element: <DessertPage />,
-      },
-      {
-        path: 'desserts/:slug',
-        element: <DessertPage />,
-      },
-      {
         path: '*',
         element: <NotFoundPage />,
       },
     ],
+  },
+  {
+    path: 'nutrition/:slug',
+    element: <DessertPage />,
+  },
+  {
+    path: 'desserts/:slug',
+    element: <DessertPage />,
   },
 ]);
 

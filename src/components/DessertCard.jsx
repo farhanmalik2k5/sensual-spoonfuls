@@ -31,7 +31,7 @@ export default function DessertCard({ dessert }) {
         />
         {/* ABV badge */}
         <span className="dessert-card__badge" aria-label={`Contains approximately ${abv} alcohol by volume`}>
-          {abv} ABV / AF Available
+          {abv} ABV
         </span>
       </div>
 
@@ -51,8 +51,8 @@ export default function DessertCard({ dessert }) {
             <span className="dessert-card__meta-value">3 oz</span>
           </div>
           <div className="dessert-card__meta-item">
-            <span className="dessert-card__meta-label">Variants</span>
-            <span className="dessert-card__meta-value">Alcohol / AF</span>
+            <span className="dessert-card__meta-label">ABV</span>
+            <span className="dessert-card__meta-value">{abv}</span>
           </div>
         </div>
 
