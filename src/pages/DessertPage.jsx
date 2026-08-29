@@ -1,31 +1,17 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getDessertBySlug } from '../data/desserts';
 import Footer from '../components/Footer';
 
-/**
- * DessertPage
- * ─────────────────
- * Dynamic route: /desserts/:slug
- *
- * This single template renders the correct dessert based on the URL slug.
- * Every QR code points to a URL like:
- *   https://sensualspoonfuls.com/desserts/buttery-nipple
- *
- * The customer lands directly on this page — no homepage visit required.
- * The correct dessert information image is displayed prominently.
- *
- * If the slug doesn't match any dessert, a branded "Dessert not found"
- * state is shown with a back-to-menu button.
- */
 export default function DessertPage() {
   const { slug } = useParams();
   const dessert = getDessertBySlug(slug);
+  const [variant, setVariant] = useState('alcohol'); // 'alcohol' or 'af'
 
   // Dynamically update document title and meta description for SEO
   useEffect(() => {
     if (dessert) {
-      document.title = `${dessert.name} | Sensual Spoonfuls`;
+      document.title = `${dessert.name} Nutritional Value | Sensual Spoonfuls`;
 
       // Meta description
       let meta = document.querySelector('meta[name="description"]');
@@ -34,7 +20,7 @@ export default function DessertPage() {
         meta.name = 'description';
         document.head.appendChild(meta);
       }
-      meta.content = `${dessert.name} by Sensual Spoonfuls — ${dessert.tagline} ${dessert.calories} calories per serving. View full nutrition facts.`;
+      meta.content = `${dessert.name} Nutritional Value & Ingredients by Sensual Spoonfuls — ${dessert.tagline}`;
 
       // Canonical URL
       let canonical = document.querySelector('link[rel="canonical"]');
@@ -80,6 +66,9 @@ export default function DessertPage() {
       </div>
     );
   }
+
+  const activeImage = variant === 'alcohol' ? dessert.infoImage : (dessert.infoImageAF || dessert.infoImage);
+  const activeAlt = variant === 'alcohol' ? dessert.infoImageAlt : (dessert.infoImageAltAF || dessert.infoImageAlt);
 
   /* ── Dessert Found ─────────────────────────────────────── */
   return (
@@ -129,7 +118,7 @@ export default function DessertPage() {
               />
             </div>
 
-            <p className="dessert-page__label">Sensual Spoonfuls Presents</p>
+            <p className="dessert-page__label">Sensual Spoonfuls Nutritional Information</p>
 
             <h1 id="dessert-name" className="dessert-page__name">
               {dessert.name}
@@ -139,7 +128,33 @@ export default function DessertPage() {
           </div>
         </section>
 
-        {/* Nutrition / Ingredient Information Image — PRIMARY CONTENT */}
+        {/* Variant Selector Tabs for Alcohol vs Alcohol-Free */}
+        <section className="dessert-page__variant-selector">
+          <div className="container">
+            <div className="variant-tabs" role="tablist" aria-label="Nutritional value version options">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={variant === 'alcohol'}
+                className={`variant-tab ${variant === 'alcohol' ? 'variant-tab--active' : ''}`}
+                onClick={() => setVariant('alcohol')}
+              >
+                🍷 Alcohol Version
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={variant === 'af'}
+                className={`variant-tab ${variant === 'af' ? 'variant-tab--active' : ''}`}
+                onClick={() => setVariant('af')}
+              >
+                🌱 Alcohol-Free (Non-Alcoholic)
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Nutrition / Ingredient Information Image */}
         <section
           className="dessert-page__info"
           aria-label="Nutrition and ingredient information"
@@ -147,12 +162,12 @@ export default function DessertPage() {
           <div className="container">
             <div className="dessert-page__info-image-wrap">
               <img
-                src={dessert.infoImage}
-                alt={dessert.infoImageAlt}
+                key={variant}
+                src={activeImage}
+                alt={activeAlt}
                 className="dessert-page__info-image"
                 loading="eager"
                 fetchpriority="high"
-                /* No explicit width/height — preserves original aspect ratio */
               />
             </div>
           </div>

@@ -1151,6 +1151,49 @@ ul, ol { list-style: none; }
   line-height: 1.6;
 }
 
+/* ── Variant Tabs for Alcohol vs Alcohol-Free ──────────────────────── */
+.dessert-page__variant-selector {
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.variant-tabs {
+  display: inline-flex;
+  gap: 0.4rem;
+  background: var(--color-surface-2);
+  padding: 0.35rem;
+  border-radius: 100px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.variant-tab {
+  padding: 0.65rem 1.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border-radius: 100px;
+  transition: all var(--transition-base);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.variant-tab:hover {
+  color: var(--color-gold-light);
+}
+
+.variant-tab--active {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  color: #0a0a0a;
+  box-shadow: 0 2px 14px rgba(201, 168, 76, 0.35);
+}
+
 .dessert-page__info { padding-bottom: var(--space-2xl); }
 
 .dessert-page__info-image-wrap {

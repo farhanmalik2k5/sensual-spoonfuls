@@ -20,11 +20,16 @@ export const desserts = [
     slug: "buttery-nipple",
     /** Short tagline shown on the card */
     tagline: "A layered dessert with butterscotch and white chocolate.",
-    /** Path to the detailed nutrition/ingredient info image (served from /public) */
+    /** Pure dessert product photo for homepage menu cards */
+    cardImage: "/assets/desserts/buttery-nipple.png",
+    /** Path to the detailed nutrition/ingredient info image (Alcohol variant) */
     infoImage: "/assets/desserts/buttery-nipple-info.jpg",
-    /** Alt text for the info image — describe contents for screen readers */
     infoImageAlt:
-      "Nutrition facts and ingredient information for Buttery Nipple dessert cup by Sensual Spoonfuls. 350 calories per serving, approximately 5% ABV.",
+      "Nutrition facts and ingredient information for Buttery Nipple dessert cup (Alcohol Variant) by Sensual Spoonfuls. 350 calories per serving, approximately 5% ABV.",
+    /** Path to the detailed nutrition/ingredient info image (Alcohol-Free variant) */
+    infoImageAF: "/assets/desserts/buttery-nipple-af-info.png",
+    infoImageAltAF:
+      "Nutrition facts and ingredient information for Buttery Nipple dessert cup (Alcohol-Free Variant) by Sensual Spoonfuls.",
     /** Calories per serving (used for quick metadata) */
     calories: 350,
     /** Alcohol by volume per serving */
@@ -37,9 +42,13 @@ export const desserts = [
     slug: "the-orange-affair",
     tagline:
       "A layered citrus and cream dessert with a touch of indulgence in every spoonful.",
+    cardImage: "/assets/desserts/orange-affair.png",
     infoImage: "/assets/desserts/orange-affair-info.jpg",
     infoImageAlt:
-      "Nutrition facts and ingredient information for The Orange Affair dessert cup by Sensual Spoonfuls. 310 calories per serving, approximately 5% ABV.",
+      "Nutrition facts and ingredient information for The Orange Affair dessert cup (Alcohol Variant) by Sensual Spoonfuls. 310 calories per serving, approximately 5% ABV.",
+    infoImageAF: "/assets/desserts/orange-affair-af-info.png",
+    infoImageAltAF:
+      "Nutrition facts and ingredient information for The Orange Affair dessert cup (Alcohol-Free Variant) by Sensual Spoonfuls.",
     calories: 310,
     abv: "~5%",
     servingSize: "1 dessert cup (3 oz / 85 g)",
@@ -48,9 +57,13 @@ export const desserts = [
     name: "Sinfully Seductive",
     slug: "sinfully-seductive",
     tagline: "Love at first bite. Indulge in every layer.",
+    cardImage: "/assets/desserts/sinfully-seductive.png",
     infoImage: "/assets/desserts/sinfully-seductive-info.jpg",
     infoImageAlt:
-      "Nutrition facts and ingredient information for Sinfully Seductive dessert cup by Sensual Spoonfuls. 360 calories per serving, approximately 5% ABV.",
+      "Nutrition facts and ingredient information for Sinfully Seductive dessert cup (Alcohol Variant) by Sensual Spoonfuls. 360 calories per serving, approximately 5% ABV.",
+    infoImageAF: "/assets/desserts/sinfully-seductive-af-info.png",
+    infoImageAltAF:
+      "Nutrition facts and ingredient information for Sinfully Seductive dessert cup (Alcohol-Free Variant) by Sensual Spoonfuls.",
     calories: 360,
     abv: "~5%",
     servingSize: "1 dessert cup (3 oz / 85 g)",

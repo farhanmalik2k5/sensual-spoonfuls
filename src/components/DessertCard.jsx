@@ -10,18 +10,19 @@ import { Link } from 'react-router-dom';
  * @param {import('../data/desserts').Dessert} dessert
  */
 export default function DessertCard({ dessert }) {
-  const { name, slug, tagline, infoImage, infoImageAlt, calories, abv } = dessert;
+  const { name, slug, tagline, cardImage, infoImage, calories, abv } = dessert;
+  const imageToDisplay = cardImage || infoImage;
 
   return (
     <Link
       to={`/desserts/${slug}`}
       className="dessert-card"
-      aria-label={`View ingredients and nutrition for ${name}`}
+      aria-label={`View ingredients and nutritional value for ${name}`}
     >
-      {/* Info image (top portion showing dessert) used as card visual */}
+      {/* Pure dessert product photograph */}
       <div className="dessert-card__image-wrap">
         <img
-          src={infoImage}
+          src={imageToDisplay}
           alt={`${name} dessert cup`}
           className="dessert-card__image"
           loading="lazy"
@@ -30,7 +31,7 @@ export default function DessertCard({ dessert }) {
         />
         {/* ABV badge */}
         <span className="dessert-card__badge" aria-label={`Contains approximately ${abv} alcohol by volume`}>
-          {abv} ABV
+          {abv} ABV / AF Available
         </span>
       </div>
 
@@ -50,14 +51,14 @@ export default function DessertCard({ dessert }) {
             <span className="dessert-card__meta-value">3 oz</span>
           </div>
           <div className="dessert-card__meta-item">
-            <span className="dessert-card__meta-label">ABV</span>
-            <span className="dessert-card__meta-value">{abv}</span>
+            <span className="dessert-card__meta-label">Variants</span>
+            <span className="dessert-card__meta-value">Alcohol / AF</span>
           </div>
         </div>
 
-        {/* Explicit CTA */}
+        {/* Explicit Nutritional Value CTA */}
         <div className="dessert-card__cta" role="presentation">
-          View Ingredients &amp; Info ↗
+          View Nutritional Value ↗
         </div>
       </div>
     </Link>
