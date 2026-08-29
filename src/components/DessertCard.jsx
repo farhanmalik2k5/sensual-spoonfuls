@@ -15,7 +15,7 @@ export default function DessertCard({ dessert }) {
 
   return (
     <Link
-      to={`/desserts/${slug}`}
+      to={`/nutrition/${slug}`}
       className="dessert-card"
       aria-label={`View ingredients and nutritional value for ${name}`}
     >

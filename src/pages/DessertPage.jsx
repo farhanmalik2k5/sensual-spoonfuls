@@ -29,7 +29,7 @@ export default function DessertPage() {
         canonical.rel = 'canonical';
         document.head.appendChild(canonical);
       }
-      canonical.href = `https://sensualspoonfuls.com/desserts/${dessert.slug}`;
+      canonical.href = `https://sensualspoonfuls.com/nutrition/${dessert.slug}`;
     } else {
       document.title = 'Dessert Not Found | Sensual Spoonfuls';
     }

@@ -9,14 +9,14 @@
  *       public/assets/desserts/<slug>-info.jpg
  *  3. That's it. The card, route, and QR URL are all generated automatically.
  *
- * QR URL pattern: https://sensualspoonfuls.com/desserts/<slug>
+ * QR URL pattern: https://sensualspoonfuls.com/nutrition/<slug>
  */
 
 export const desserts = [
   {
     /** Displayed name on cards and dessert page */
     name: "Buttery Nipple",
-    /** URL slug → /desserts/buttery-nipple */
+    /** URL slug → /nutrition/buttery-nipple */
     slug: "buttery-nipple",
     /** Short tagline shown on the card */
     tagline: "A layered dessert with butterscotch and white chocolate.",
