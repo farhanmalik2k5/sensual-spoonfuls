@@ -41,8 +41,8 @@ export const desserts = [
     cardImage: "/assets/desserts/orange-affair.png",
     infoImage: "/assets/desserts/orange-affair-info.jpg",
     infoImageAlt:
-      "Nutrition facts and ingredient information for The Orange Affair dessert cup by Sensual Spoonfuls. 310 calories per serving, approximately 5% ABV.",
-    calories: 310,
+      "Nutrition facts and ingredient information for The Orange Affair dessert cup by Sensual Spoonfuls. 290 calories per serving, approximately 5% ABV.",
+    calories: 290,
     abv: "~5%",
     servingSize: "1 dessert cup (3 oz / 85 g)",
   },
@@ -53,8 +53,8 @@ export const desserts = [
     cardImage: "/assets/desserts/sinfully-seductive.png",
     infoImage: "/assets/desserts/sinfully-seductive-info.jpg",
     infoImageAlt:
-      "Nutrition facts and ingredient information for Sinfully Seductive dessert cup by Sensual Spoonfuls. 360 calories per serving, approximately 5% ABV.",
-    calories: 360,
+      "Nutrition facts and ingredient information for Sinfully Seductive dessert cup by Sensual Spoonfuls. 280 calories per serving, approximately 5% ABV.",
+    calories: 280,
     abv: "~5%",
     servingSize: "1 dessert cup (3 oz / 85 g)",
   },
