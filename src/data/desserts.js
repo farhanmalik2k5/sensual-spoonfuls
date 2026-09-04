@@ -97,6 +97,18 @@ export const desserts = [
     abv: "~5%",
     servingSize: "1 dessert cup (3 oz / 85 g)",
   },
+  {
+    name: "Dirty Desires",
+    slug: "dirty-desires",
+    tagline: "Love at first bite. Indulge in every layer.",
+    cardImage: "/assets/desserts/dirty-desires.jpg",
+    infoImage: "/assets/desserts/dirty-desires-info.jpg",
+    infoImageAlt:
+      "Nutrition facts and ingredient information for Dirty Desires dessert cup by Sensual Spoonfuls. 320 calories per serving, approximately 5% ABV.",
+    calories: 320,
+    abv: "~5%",
+    servingSize: "1 dessert cup (3 oz / 85 g)",
+  },
 ];
 
 // ─── ADD NEW DESSERTS BELOW THIS LINE ───────────────────────────────────────
