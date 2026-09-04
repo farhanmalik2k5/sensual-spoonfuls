@@ -58,6 +58,45 @@ export const desserts = [
     abv: "~5%",
     servingSize: "1 dessert cup (3 oz / 85 g)",
   },
+  {
+    name: "Caramel Opulence",
+    slug: "caramel-opulence",
+    tagline:
+      "Salted caramel & cream cheesecake parfait over a buttery vanilla wafer crust.",
+    cardImage: "/assets/desserts/caramel-opulence.jpg",
+    infoImage: "/assets/desserts/caramel-opulence-info.jpg",
+    infoImageAlt:
+      "Nutrition facts and ingredient information for Caramel Opulence dessert cup by Sensual Spoonfuls. 360 calories per serving, approximately 5% ABV.",
+    calories: 360,
+    abv: "~5%",
+    servingSize: "1 dessert cup (3 oz / 85 g)",
+  },
+  {
+    name: "B.B.C. (Bailey's, Banana, Coconut)",
+    slug: "bbc",
+    tagline:
+      "A luscious layered cheesecake shooter with Bailey's, tropical coconut, and sweet banana.",
+    cardImage: "/assets/desserts/bbc.jpg",
+    infoImage: "/assets/desserts/bbc-info.jpg",
+    infoImageAlt:
+      "Nutrition facts and ingredient information for B.B.C. (Bailey's, Banana, Coconut) dessert cup by Sensual Spoonfuls. 340 calories per serving, approximately 5% ABV.",
+    calories: 340,
+    abv: "~5%",
+    servingSize: "1 dessert cup (3 oz / 85 g)",
+  },
+  {
+    name: "Haunted Seduction",
+    slug: "haunted-seduction",
+    tagline:
+      "Decadent layers of rich dark chocolate cheesecake, cherry cheesecake, and Oreo crumble, topped with a cherry.",
+    cardImage: "/assets/desserts/haunted-seduction.jpg",
+    infoImage: "/assets/desserts/haunted-seduction-info.jpg",
+    infoImageAlt:
+      "Nutrition facts and ingredient information for Haunted Seduction dessert cup by Sensual Spoonfuls. 300 calories per serving, approximately 5% ABV.",
+    calories: 300,
+    abv: "~5%",
+    servingSize: "1 dessert cup (3 oz / 85 g)",
+  },
 ];
 
 // ─── ADD NEW DESSERTS BELOW THIS LINE ───────────────────────────────────────
